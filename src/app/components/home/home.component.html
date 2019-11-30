@@ -1,0 +1,40 @@
+<section *ngFor="let head of header" class="jumbotron text-left bg"  [ngStyle]="{'background-image':'url(' + head.bg_image + ')'}">
+  <div  class="container" >
+    <div class="sub-text">
+      <h1 [innerHTML]="head.titulo" class="tituloMain"></h1>
+      <p [innerHTML]="head.sub_titulo"></p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <h1>Productos</h1>
+  <div class="row">
+    <div *ngFor="let producto of productos" class="col-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="card cardH mb-3">
+          <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-5">
+              <img [src]="producto.imagenProducto" class="img-fluid img-products" alt="...">
+            </div>
+            <div class="col-12 col-sm-6 col-md-7">
+              <div class="card-body">
+                <h5 [innerHTML]="producto.tituloProducto" class="card-title"></h5>
+                <div class="card-text"><small class="text-muted"></small></div>
+                <div [innerHTML]="producto.descripcion" class="card-text"></div>
+                <div class="card-text-price">{{producto.moneda_simbol}}{{ precioProductoFinal(producto) }}</div>
+                <div class="card-text-price-discount">
+                  <span [innerHTML]="precioProductoRegular(producto)"></span> | 
+                  <i *ngIf="producto.tipo_descuento == false">{{producto.descuento}}%</i>
+                  <i *ngIf="producto.tipo_descuento == true">-{{producto.descuento}}</i>
+                </div>
+                <div>
+                    <a routerLink="/comprar" class="btn btn-primary">Comprar</a>
+                    <a routerLink="/nuevoproducto/{{producto.id}}" class="btn btn-primary">Editar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

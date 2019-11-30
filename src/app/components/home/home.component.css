@@ -1,0 +1,58 @@
+
+ .bg{
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
+
+.tituloMain{
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.cardH{
+    min-height: 14rem !important;
+    height: 14rem;
+}
+
+.sub-text{
+    width: 100%;
+    color: #181238;
+}
+
+.img-products{
+    padding: 1rem;
+    max-width: 100% !important;
+    height: auto;;
+}
+
+.card-text-price{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #181238 !important;
+}
+
+.card-text-price-discount{
+    color: gray;
+}
+
+.card-text-price-discount span{
+    text-decoration: line-through;
+}
+
+/*MEDIA QUERY*/
+/* Small devices (landscape phones, 576px and up) */
+/*@media (min-width: 576px){}*/
+
+/* Medium devices (tablets, 768px and up) */
+/*@media (min-width: 768px){}*/
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px){
+    .sub-text{
+        width: 50%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+/*@media (min-width: 1200px){}*/
